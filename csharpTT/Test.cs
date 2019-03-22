@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace csharpTT
 {
-    internal class Program
+    internal class Test
     {
         private static void Main(string[] args)
         {
-            Console.Write("Main");
-            Console.Read();
+            Console.Write("test");
         }
     }
 }
