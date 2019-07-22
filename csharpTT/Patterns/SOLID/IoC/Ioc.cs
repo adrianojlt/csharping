@@ -6,7 +6,7 @@ namespace csharpTT.Patterns.SOLID.IoC
 {
     public static class Ioc
     {
-        public static void main()
+        public static void Exec()
         {
         }
     }

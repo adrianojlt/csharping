@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Generics\" />
+    <Folder Include="Reflection\" />
+    <Folder Include="Patterns\SOLID\OCP\" />
     <Folder Include="Threads\" />
   </ItemGroup>
 

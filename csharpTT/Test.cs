@@ -6,9 +6,10 @@ namespace csharpTT
 {
     internal class Test
     {
-        private static void Main(string[] args)
+        private static void Exec()
         {
-            Console.Write("test");
+            MenuConsole.Write("test");
+            MenuConsole.ReadLine();
         }
     }
 }
