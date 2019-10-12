@@ -7,6 +7,8 @@
     {
         public string Title { get; private set; }
 
+        private enum NavKeys { Exit = 0, None = 9, Back = 1, Home = 2 }
+
         public Program Program { get; set; }
 
         public Page(string title, Program program)
@@ -30,6 +32,36 @@
                 Console.WriteLine(Title);
             }
             Console.WriteLine("---");
+        }
+
+        public virtual void Navigation()
+        {
+            NavKeys input = NavKeys.None;
+
+            while ( input == NavKeys.None )
+            {
+                if (!Enum.TryParse(Input.ReadString("Press [1] to go Back. [2] to go Home or [0] to exit"), out input))
+                {
+                    input = NavKeys.None;
+                }
+
+                switch (input)
+                {
+                    case NavKeys.Back:
+                        Program.NavigateBack();
+                        break;
+                    case NavKeys.Home:
+                        Program.NavigateHome();
+                        break;
+                    case NavKeys.Exit:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        input = NavKeys.None;
+                        Console.WriteLine("Invalid Input!!!");
+                        break;
+                }
+            }
         }
     }
 }

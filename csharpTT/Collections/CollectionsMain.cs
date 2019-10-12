@@ -1,11 +1,18 @@
-﻿using System;
+﻿using csharpTT.MenuConsole;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace csharpTT.Collections
 {
-    public class CollectionsMain
+    public class CollectionsMain : MenuPage
     {
+        public CollectionsMain(Program program) : base("Collections Page", program,
+            new Option("Linq", () => program.NavigateTo<Linq>()),
+            new Option("Collections", () => program.NavigateTo<Collections>()))
+        {
+
+        }
         public static void exec()
         {
         }

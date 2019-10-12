@@ -16,9 +16,12 @@ namespace csharpTT.Temp
         {
             string all = ((Gender)0).ToString();
             string unknown = ((Gender)10).ToString();
+
+            /*
             MenuConsole.Write(all);
             MenuConsole.Write(unknown);
             MenuConsole.ReadLine();
+            */
         }
     }
 }

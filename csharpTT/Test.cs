@@ -8,8 +8,6 @@ namespace csharpTT
     {
         private static void Exec()
         {
-            MenuConsole.Write("test");
-            MenuConsole.ReadLine();
         }
     }
 }

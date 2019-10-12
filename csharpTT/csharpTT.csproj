@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Folder Include="Generics\" />
+    <Folder Include="Delegates\" />
     <Folder Include="Reflection\" />
     <Folder Include="Patterns\SOLID\OCP\" />
     <Folder Include="Threads\" />
