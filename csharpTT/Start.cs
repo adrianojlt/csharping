@@ -10,10 +10,11 @@
             AddPage(new Main(this));
 
             AddPage(new CollectionsMain(this));
-            AddPage(new Collections.Collections(this));
+            AddPage(new Collections.CollectionsExample(this));
             AddPage(new Linq(this));
 
             SetPage<Main>();
         }
+
     }
 }

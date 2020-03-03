@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace csharpTT.Patterns.Visit.Documents
+namespace csharpTT.DesignPatterns.Visit.Documents
 {
-    public class HyperLink: DocumentPart
+    public class BoldText: DocumentPart
     {
-        public string Url { get; private set; }
-
         public override void Accept(IVisitor visitor)
         {
             visitor.Visit(this);

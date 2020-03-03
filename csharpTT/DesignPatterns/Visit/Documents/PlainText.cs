@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace csharpTT.Patterns.Visit.Documents
+namespace csharpTT.DesignPatterns.Visit.Documents
 {
     public class PlainText : DocumentPart
     {

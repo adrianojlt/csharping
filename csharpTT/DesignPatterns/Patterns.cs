@@ -1,20 +1,20 @@
 ﻿using System;
 
-namespace csharpTT.Collections
+namespace csharpTT.DesignPatterns
 {
-    public class Collections
+    public class Patterns
     {
-        private static Collections instance;
+        private static Patterns instance;
 
-        private Collections() { }
+        private Patterns() { }
 
-        public static Collections Instance
+        public static Patterns Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new Collections();
+                    instance = new Patterns();
                 }
 
                 return instance;
@@ -23,7 +23,7 @@ namespace csharpTT.Collections
 
         public void Start()
         {
-            while (Menu()) { }
+            while(Menu()) { }
         }
 
         private bool Menu()

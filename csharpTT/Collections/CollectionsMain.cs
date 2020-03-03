@@ -9,10 +9,16 @@ namespace csharpTT.Collections
     {
         public CollectionsMain(Program program) : base("Collections Page", program,
             new Option("Linq", () => program.NavigateTo<Linq>()),
-            new Option("Collections", () => program.NavigateTo<Collections>()))
+            new Option("Collections", () => program.NavigateTo<CollectionsExample>()))
         {
 
         }
+
+        public void Menu()
+        {
+
+        }
+
         public static void exec()
         {
         }
