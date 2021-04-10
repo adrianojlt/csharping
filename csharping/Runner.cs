@@ -1,11 +1,11 @@
 ﻿namespace csharpTT
 {
-    internal class Runner
+    public class Runner
     {
         private static void Main(string[] args)
         {
             //new Start().Run();
-            new Menu().Start();
+            //new Menu().Start();
         }
 
         public static void cast()

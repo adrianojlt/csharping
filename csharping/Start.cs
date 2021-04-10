@@ -7,13 +7,13 @@
     {
         public Start(): base("C sharp Tutorial", breadcrumbHeader: true)
         {
-            AddPage(new Main(this));
+            AddPage(new Main1(this));
 
             AddPage(new CollectionsMain(this));
             AddPage(new Collections.CollectionsExample(this));
-            AddPage(new Linq(this));
+            //AddPage(new Linq(this));
 
-            SetPage<Main>();
+            SetPage<Main1>();
         }
 
     }
