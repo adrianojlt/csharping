@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace csharpTT.DesignPatterns.Visit.Documents
+namespace csharping.DesignPatterns.Visit.Documents
 {
     public class BoldText: DocumentPart
     {

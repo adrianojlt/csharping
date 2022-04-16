@@ -1,4 +1,4 @@
-﻿namespace csharpTT.Tests
+﻿namespace csharping.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Xunit;

@@ -1,19 +1,16 @@
-﻿namespace csharpTT
+﻿namespace csharping
 {
     using System;
-    using csharpTT.DesignPatterns;
-    using csharpTT.Temp;
-    using csharpTT.Types;
+    using csharping.DesignPatterns;
+    using csharping.Temp;
+    using csharping.Types;
 
     public class Menu
     {
 
         public void Start()
         {
-            while (PrintMenu())
-            {
-                
-            }
+            //while (PrintMenu()) { }
         }
         private static bool PrintMenu()
         {
@@ -63,7 +60,11 @@
 
         private static void Delegates()
         {
+            Delegates.Delegates delegates = new Delegates.Delegates();
 
+
+            var res = csharping.Delegates.Delegates.Calc(6.0,13.0);
+            
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace csharpTT.Collections
+﻿namespace csharping.Collections
 {
-    using csharpTT.MenuConsole;
+    using csharping.MenuConsole;
     using System.Collections.Generic;
 
     public class CollectionsExample : Page

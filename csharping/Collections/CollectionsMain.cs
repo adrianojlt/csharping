@@ -1,9 +1,9 @@
-﻿using csharpTT.MenuConsole;
+﻿using csharping.MenuConsole;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace csharpTT.Collections
+namespace csharping.Collections
 {
     public class CollectionsMain : MenuPage
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace csharpTT.Collections
+namespace csharping.Collections
 {
     public class Collections
     {

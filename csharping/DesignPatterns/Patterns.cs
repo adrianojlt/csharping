@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace csharpTT.DesignPatterns
+namespace csharping.DesignPatterns
 {
     public class Patterns
     {

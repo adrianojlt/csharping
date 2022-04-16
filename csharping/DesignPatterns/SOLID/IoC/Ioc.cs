@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace csharpTT.DesignPatterns.SOLID.IoC
+namespace csharping.DesignPatterns.SOLID.IoC
 {
     public static class Ioc
     {

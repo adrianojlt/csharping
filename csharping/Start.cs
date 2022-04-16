@@ -1,7 +1,7 @@
-﻿namespace csharpTT
+﻿namespace csharping
 {
-    using csharpTT.Collections;
-    using csharpTT.MenuConsole;
+    using csharping.Collections;
+    using csharping.MenuConsole;
 
     public class Start: Program
     {

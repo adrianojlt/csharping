@@ -1,6 +1,6 @@
-﻿namespace csharpTT.Tests.Delegates
+﻿namespace csharping.Tests.Delegates
 {
-    using csharpTT.Delegates;
+    using csharping.Delegates;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
     using System.Linq;

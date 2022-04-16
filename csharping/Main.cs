@@ -1,10 +1,10 @@
-﻿using csharpTT.Collections;
-using csharpTT.MenuConsole;
+﻿using csharping.Collections;
+using csharping.MenuConsole;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace csharpTT
+namespace csharping
 {
     class Main1 : MenuPage
     {

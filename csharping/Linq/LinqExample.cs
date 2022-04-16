@@ -1,5 +1,6 @@
-﻿namespace csharpTT.Linq
+﻿namespace csharping.Linq
 {
+    using csharping.Model;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -14,6 +15,16 @@
             var oddNumbers = numbers.Where(n => n % 2 == 1);
 
             numbers.Max();
+        }
+
+        public void Cenas()
+        {
+            var densities = new List<Density> 
+            { 
+                new Density() { Position = 3}, 
+                new Density() { Position = 6},
+                new Density() { Position = 9} 
+            };
         }
 
         public void Temp()

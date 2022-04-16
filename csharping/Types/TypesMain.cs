@@ -1,4 +1,4 @@
-﻿namespace csharpTT.Types
+﻿namespace csharping.Types
 {
     using System;
     using System.Linq;

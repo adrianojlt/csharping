@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace csharpTT.DesignPatterns.SOLID.Visitor.Employe
+namespace csharping.DesignPatterns.SOLID.Visitor.Employe
 {
     abstract class Element
     {

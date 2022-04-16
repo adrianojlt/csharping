@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace csharpTT.DesignPatterns.Visit.Documents
+namespace csharping.DesignPatterns.Visit.Documents
 {
     public class Document
     {
@@ -19,6 +17,7 @@ namespace csharpTT.DesignPatterns.Visit.Documents
         public void Exec()
         {
             HtmlVisitor visitor = new HtmlVisitor();
+
             Accept(visitor);
         }
     }

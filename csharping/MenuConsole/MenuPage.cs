@@ -1,4 +1,4 @@
-﻿namespace csharpTT.MenuConsole
+﻿namespace csharping.MenuConsole
 {
     public abstract class MenuPage : Page
     {

@@ -1,4 +1,4 @@
-﻿namespace csharpTT.Delegates
+﻿namespace csharping.Delegates
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -22,7 +22,7 @@
             return ExtractStrings(names.ToArray(), name => name.Length > nameLength);
         }
 
-        private static IEnumerable<string> ExtractStrings(string[] names, Filter filter) // ... or use Func<string, bool> instead of delegate Filter
+        private static IEnumerable<string> ExtractStrings(string[] names, Filter filter) // ... or use Func<string, bool> instead of delegate bool Filter
         {
             List<string> result = Enumerable.Empty<string>().ToList();
 

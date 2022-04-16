@@ -1,10 +1,11 @@
-﻿namespace csharpTT.Delegates
+﻿namespace csharping.Delegates
 {
     using System;
 
     public class Delegates
     {
         public delegate void Del(string message);
+
 
         public delegate double PerformCalculation(double x, double y);
 
@@ -59,6 +60,20 @@
         {
             return number * number;
         }
+
+        public static int Cube(int number) => number * number * number;
+
+        public static void Transformation()
+        {
+            Transformer tSquare = Square;
+            int tsAnswer = tSquare(3); // 9
+
+            // ... the same as the the previous one.
+            Transformer tCube = new Transformer(Cube);
+            int tcAnswer = tCube.Invoke(3); // 27
+        }
+
+        delegate int Transformer(int x);
 
         public static Func<int,int> Sqr = (number) => number * number;
     }

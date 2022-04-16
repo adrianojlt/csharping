@@ -1,4 +1,4 @@
-﻿namespace csharpTT.MenuConsole
+﻿namespace csharping.MenuConsole
 {
     using System;
     public static class Input

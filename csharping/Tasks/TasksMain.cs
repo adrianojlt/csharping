@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace csharpTT.Tasks
+namespace csharping.Tasks
 {
     public class TasksMain
     {

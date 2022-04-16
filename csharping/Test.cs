@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace csharpTT
+namespace csharping
 {
     internal class Test
     {

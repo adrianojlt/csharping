@@ -1,4 +1,4 @@
-﻿namespace csharpTT.Extensions
+﻿namespace csharping.Extensions
 {
     public class ExtensionsMain
     {
