@@ -4,6 +4,9 @@
     using System.Net.Http;
     using System;
     using System.Threading;
+    using System.IO;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class Runner
     {
@@ -11,7 +14,8 @@
         {
             //new Start().Run();
             //new Menu().Start();
-            await MyRequest();
+            //await RepeatedRequest();
+            ReadCSV();
         }
 
         public static void cast()
@@ -19,7 +23,71 @@
             //var long = 2
         }
 
-        public static async Task MyRequest()
+        public static void ReadCSV()
+        {
+            using( var reader = new StreamReader(@"C:\tmp\freguesias.csv"))
+            {
+                reader.ReadLine();
+
+                var locals = new List<Local>();
+
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(';');
+
+                    var distrito = new Distrito(int.Parse(values[0]), values[1].Trim());
+                    var freguesia = new Freguesia(int.Parse(values[7]), values[5].Trim());
+
+                    locals.Add(new Local(distrito, values[3].Trim(), freguesia));
+                }
+
+                var localDistritos = locals.GroupBy(x => x.Distrito.Id).Select(s => s.First());
+
+                foreach (var ld in localDistritos)
+                {
+                    Console.WriteLine($"insert into Distrito values ({ld.Distrito.Id}, '{ld.Distrito.Name}');");
+
+                    Console.WriteLine();
+
+                    var localConcelhos = locals
+                        .Where(w => w.Distrito.Id == ld.Distrito.Id)
+                        .GroupBy(x => x.Concelho)
+                        .Select(s => s.ToList())
+                        .ToList();
+
+                    for (int i = 0; i < localConcelhos.Count; i++)
+                    //foreach (var lc in localConcelhos)
+                    { 
+                        Console.WriteLine($"insert into Concelhos values ({i+1}, '{localConcelhos[i].First().Concelho}', {ld.Distrito.Id});");
+
+                        Console.WriteLine();
+
+                        foreach (var lf in localConcelhos[i])
+                        {
+                            Console.WriteLine($"insert into Freguesias values ('{lf.Freguesia.Name}', {i+1}, {lf.Freguesia.CodCF});");
+                        }
+
+                        Console.WriteLine();
+                    }
+
+                    Console.WriteLine();
+                }
+
+
+
+                /*
+                foreach (var local in locals)
+                {
+                    Console.WriteLine(local.ToString());
+                }
+                */
+            }
+
+            Console.ReadLine();
+        }
+
+        public static async Task RepeatedRequest()
         {
             var Client = new HttpClient();
 
@@ -45,5 +113,48 @@
             Console.ReadLine();
         }
 
+    }
+
+    public class Local
+    {
+        public Local(Distrito distrito, string concelho, Freguesia freguesia)
+        {
+            this.Distrito = distrito;
+            this.Concelho = concelho;
+            this.Freguesia = freguesia;
+        }
+
+        public Distrito Distrito { get; }
+        public string Concelho { get; }
+        public Freguesia Freguesia { get; }
+
+        public override string ToString()
+        {
+            return $"{Distrito.Id}:{Distrito.Name}:{Concelho}:{Freguesia.Name}:{Freguesia.CodCF}";
+        }
+    }
+
+    public class Distrito
+    {
+        public Distrito(int id, string name)
+        {
+            this.Id = id;
+            this.Name = name;
+        }
+
+        public int Id { get; set; } 
+        public string Name { get; set; }
+    }
+
+    public class Freguesia
+    {
+        public Freguesia(int codcf, string name)
+        {
+            this.CodCF = codcf;
+            this.Name = name;
+        }
+
+        public int CodCF { get; set; }
+        public string Name { get; set; }
     }
 }
