@@ -12,6 +12,7 @@
     <Folder Include="DesignPatterns\Singleton\" />
     <Folder Include="Reflection\" />
     <Folder Include="DesignPatterns\SOLID\OCP\" />
+    <Folder Include="Temp\sql\" />
     <Folder Include="Threads\" />
   </ItemGroup>
 
