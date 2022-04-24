@@ -39,6 +39,8 @@
 
                 var localDistritos = locals.GroupBy(x => x.Distrito.Id).Select(s => s.First());
 
+                var idConselho = 1;
+
                 foreach (var ld in localDistritos)
                 {
                     var insertDistritoQuery = $"insert into Distrito values ({ld.Distrito.Id}, '{ld.Distrito.Name}');";
@@ -60,7 +62,9 @@
 
                     for (int i = 0; i < localConcelhos.Count; i++)
                     {
-                        var insertConcelhosQuery = $"insert into Concelhos values ({i + 1}, '{localConcelhos[i].First().Concelho}', {ld.Distrito.Id});";
+                        var insertConcelhosQuery = $"insert into Concelhos values ({idConselho}, '{localConcelhos[i].First().Concelho}', {ld.Distrito.Id});";
+
+                        idConselho++;
 
                         Console.WriteLine(insertConcelhosQuery);
 
@@ -74,7 +78,7 @@
                         foreach (var lf in localConcelhos[i])
                         {
                             //var insertFreguesiasQuery = $"insert into Freguesias values ('{lf.Freguesia.Name}', {i + 1}, {lf.Freguesia.CodCF});";
-                            var insertFreguesiasQuery = $"insert into Freguesias values ('{lf.Freguesia.Name}', {i + 1});";
+                            var insertFreguesiasQuery = $"insert into Freguesias values ('{lf.Freguesia.Name}', {idConselho});";
 
                             Console.WriteLine(insertFreguesiasQuery);
 
