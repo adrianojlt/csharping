@@ -18,8 +18,6 @@
         {
             using (var reader = new StreamReader(CsvFilePath))
             {
-                //reader.Peek();
-                //Encoding = reader.CurrentEncoding;
 
                 reader.ReadLine();
 
@@ -43,7 +41,7 @@
 
                 foreach (var ld in localDistritos)
                 {
-                    var insertDistritoQuery = $"insert into Distrito values ({ld.Distrito.Id}, '{ld.Distrito.Name}');";
+                    var insertDistritoQuery = $"insert into Distrito (Id,Nome) values ({ld.Distrito.Id}, '{ld.Distrito.Name}');";
 
                     Console.WriteLine(insertDistritoQuery);
 
@@ -60,11 +58,9 @@
                         .Select(s => s.ToList())
                         .ToList();
 
-                    for (int i = 0; i < localConcelhos.Count; i++)
+                    foreach (var lc in localConcelhos)
                     {
-                        var insertConcelhosQuery = $"insert into Concelhos values ({idConselho}, '{localConcelhos[i].First().Concelho}', {ld.Distrito.Id});";
-
-                        idConselho++;
+                        var insertConcelhosQuery = $"insert into Concelho (Id,Nome,DistritoId) values ({idConselho}, '{lc.First().Concelho}', {ld.Distrito.Id});";
 
                         Console.WriteLine(insertConcelhosQuery);
 
@@ -75,9 +71,9 @@
 
                         Console.WriteLine();
 
-                        foreach (var lf in localConcelhos[i])
+                        foreach (var lf in lc)
                         {
-                            //var insertFreguesiasQuery = $"insert into Freguesias values ('{lf.Freguesia.Name}', {i + 1}, {lf.Freguesia.CodCF});";
+                            //var insertFreguesiasQuery = $"insert into Freguesia (Nome,ConcelhoId,codSF) values ('{lf.Freguesia.Name}', {idConselho}, {lf.Freguesia.CodCF});";
                             var insertFreguesiasQuery = $"insert into Freguesias values ('{lf.Freguesia.Name}', {idConselho});";
 
                             Console.WriteLine(insertFreguesiasQuery);
@@ -87,6 +83,8 @@
                                 sw.WriteLine(insertFreguesiasQuery);
                             }
                         }
+
+                        idConselho++;
 
                         Console.WriteLine();
                     }
